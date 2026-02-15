@@ -1,0 +1,40 @@
+name: NeighbourHelp
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports: #port mapping e puo avere multipli port mappings
+      - "8000:8000" #la prima e dell'host e la secondo del container che esegue questa immagine
+    environment:
+      MONGO_DB: ${MONGO_DB_NAME}
+      MONGO_HOST: db
+      MONGO_USER: ${MONGO_ADMIN_USER}
+      MONGO_PASSWORD: ${MONGO_ADMIN_PASSWORD}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+    depends_on:
+      - db
+
+  db:
+    image: mongo:8.2.4   # Usa sempre il punto, mai lo spazio o il trattino
+    restart: always
+    environment:
+      # OPZIONALE: crea il contesto per gli script di init oltre che il nome del database ?
+      MONGO_INITDB_DATABASE: ${MONGO_DB_NAME}
+      #  l'utente admin del server Username e Password
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ADMIN_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ADMIN_PASSWORD}
+
+    ports:
+      - "27017:27017" #porta di default di mongo databse
+    volumes:
+      - mongo_data:/data/db #crea un volume fuori dal container con delle cartelle dove salvare i dati del databse per avere persistenza
+
+volumes:
+     mongo_data:
+

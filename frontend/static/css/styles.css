@@ -1,0 +1,205 @@
+#map {
+    height: 95vh;
+    /*height: 400px; */
+}
+
+h3 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#markerMenu {
+
+    height: 40vh;
+}
+
+#form {
+    display: grid;
+    grid-template-columns: 120px 230px;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin-top: 10vh;
+}
+
+#marker-description p {
+    margin: 0;
+    /* Rimuove lo spazio sopra e sotto */
+}
+
+
+.review {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+
+
+#header-nav p {
+    font-size: 25px;
+    color: #333;
+    font-weight: bold;
+    padding-top: 7px;
+}
+
+
+#reviews-helper {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+#reviews-user {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+#head-text-reviews-helper {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}
+
+#head-text-reviews-user {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}
+
+#prova {
+    display: flex;
+}
+
+
+.helper-box {
+    display: none;
+}
+
+#logout-button {
+
+    margin-left: 95%;
+
+}
+
+#review-description {
+
+    margin-top: 10px;
+}
+
+#insert-review {
+
+    height: 40vh;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stars Css*/
+
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Inverte l'ordine visuale: la prima stella nel codice appare a destra */
+    justify-content: flex-end;
+}
+
+.star-label {
+    width: 50px;
+    height: 50px;
+    margin-left: 8px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: #929292;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Nasconde gli input radio */
+.stars>input {
+    display: none;
+}
+
+/* Colora le stelle selezionate  */
+.stars>input:checked~.star-label:not(:hover) {
+    background-color: #d6c802;
+}
+
+/* Colora le stelle al passaggio del mouse */
+.stars>.star-label:hover,
+.stars>.star-label:hover~.star-label {
+    background-color: #d6cf6d;
+}
+
+/* End Stars Css*/
+
+
+/* index.html */
+
+#header-index{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#description-index{
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*fine index.html */
+
+
+
+@media(max-width: 576px) {
+    #form {
+        grid-template-columns: 1fr;
+
+    }
+
+    #form input {
+        width: 80%;
+        justify-self: center;
+    }
+
+    #form label {
+        margin-left: 5vh;
+    }
+
+    #map {
+        height: 93vh;
+
+    }
+
+    #nav {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+    }
+
+    #header-nav {
+        display: none;
+    }
+
+
+    #reviews-helper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #reviews-user {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+}
