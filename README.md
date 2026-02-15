@@ -54,4 +54,4 @@ Assicurati di avere installato sul tuo sistema:
 Per eseguire l'intero progetto:
 
 1. **Clona il repository**:
-2. **Esegui il commando**: ```bash docker-compose -f docker-compose.yml up -d
+2. **Esegui il commando**: docker-compose -f docker-compose.yml up -d
