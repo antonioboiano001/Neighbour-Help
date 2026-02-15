@@ -1,6 +1,7 @@
 # Neighbour-Help
 
-**Neighbour** è una pwa progettata per facilitare l'aiuto tra persone nelle vicinanze.
+**Neighbour** permette di trovare nelle proprie vicinanze persone disponibili a offrire piccoli aiuti pratici, che non richiedono l’intervento di un professionista,
+promuovendo così la comunità locale e supportando in particolare persone anziane o che vivono da sole.
 
 ---
 
