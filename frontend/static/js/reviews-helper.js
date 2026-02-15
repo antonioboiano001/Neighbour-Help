@@ -42,7 +42,7 @@ async function loadReviewsHelper() {
 
         if (!response.ok) {
 
-            alert("Error: " + user.error);
+            alert("Error: " + data.error);
         }
 
         user = await getUserData();
