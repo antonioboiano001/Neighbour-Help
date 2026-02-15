@@ -43,3 +43,15 @@ L'applicazione segue un modello di deployment standard del settore:
 ---
 
 ## 🚀 Come avviare il progetto
+
+## 📋 Prerequisiti
+
+Assicurati di avere installato sul tuo sistema:
+* **Docker**
+* **Docker Compose**
+
+---
+Per eseguire l'intero progetto:
+
+1. **Clona il repository**:
+2. **Esegui il commando**: ```bash docker-compose -f docker-compose.yml up -d
