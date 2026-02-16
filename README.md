@@ -26,8 +26,6 @@ Il progetto è stato sviluppato utilizzando le seguenti tecnologie, garantendo s
 
 ## 🏗 Architettura del Sistema
 
-L'applicazione segue un modello di deployment standard del settore:
-
 1.  **Client**: Browser dell'utente (JS/HTML/Bootstrap).
 2.  **Web Server**: **NGINX** riceve le richieste e le smista.
 3.  **Application Server**: **Gunicorn** funge da interfaccia tra NGINX e Flask.
@@ -52,7 +50,23 @@ Assicurati di avere installato sul tuo sistema:
 * **Docker Compose**
 
 ---
-Per eseguire l'intero progetto:
 
-1. **Clona il repository**:
-2. **Esegui il commando**: docker-compose -f docker-compose.yml up -d
+### ⚙️ Procedura di Avvio
+
+Per eseguire l'intero progetto, segui questi passaggi:
+
+1.  **Clona il repository**:
+    ```bash
+    git clone <url-del-repo>
+    cd neighbour-help
+    ```
+
+2.  **Esegui il comando Docker Compose**:
+    ```bash
+    docker-compose -f docker-compose.yml up -d
+    ```
+
+> [!NOTE]
+> **Inizializzazione Database**: La prima volta che si esegue il comando `docker-compose`, verrà automaticamente inizializzato il database caricando dei dati di test per testare il funzionamento.
+> 
+> **Credenziali di Test**: Per facilitare l'accesso, la password predefinita per ogni utente generato nel database di test è **`Ciao1234`** (ovviamente nel database è hashata per una questione di sicurezza).
