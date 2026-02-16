@@ -24,7 +24,7 @@ function locateUser() {
 
         }, (error) => {
             console.error("Error gps:", error);
-            alert("Impossibile accedere alla tua posizione. Controlla i permessi del browser.");
+            alert("Unable to access your location. Check your browser permissions.");
         });
 
     } catch (err) {
@@ -38,7 +38,6 @@ document.getElementById('locate-button').addEventListener('click', async functio
     if (pos[0] !== undefined && pos[1] !== undefined) {
 
         document.getElementById('position-text').value = "Acquired";
-        alert("Posizione ottenuta array: LAT:" + pos[0] + ", LON:" + pos[1]);
 
     } else {
         alert("Press confirm to allow the position to be acquired, then click the button again.");
@@ -200,32 +199,45 @@ async function getHelperData() {
 }
 
 
-
 async function loadData() {
+
+    let user, helper;
 
     try {
 
-        const user = await getUserData();
-        const helper = await getHelperData();
+        user = await getUserData();
 
-        document.getElementById('name').value = user.information.name;
-        document.getElementById('surname').value = user.information.surname;
-        document.getElementById('email').value = user.email;
-        document.getElementById('phone_number').value = user.information.phone_number;
-        helper_is = user["helper_is"];
+        if (user["helper_is"]) {
 
-        if (helper_id) {
-
-            document.querySelectorAll('.helper').forEach(el => {
-                el.style.display = 'block';
-            });
-
-            document.getElementById('description').value = helper.description;
-
+            helper = await getHelperData();
         }
 
     } catch (error) {
         console.error(error);
+    }
+
+
+    document.getElementById('name').value = user.information.name;
+    document.getElementById('surname').value = user.information.surname;
+    document.getElementById('email').value = user.email;
+    document.getElementById('phone_number').value = user.information.phone_number;
+    helper_is = user["helper_is"];
+
+    if (helper_is) {
+
+        document.querySelectorAll('.helper').forEach(el => {
+            el.style.display = 'block';
+        });
+
+        document.getElementById('description').value = helper.description;
+
+    } else {
+
+        document.querySelectorAll('.helper').forEach(el => {
+            el.style.display = 'none';
+        });
+
+
     }
 }
 
