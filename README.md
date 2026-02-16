@@ -1,6 +1,7 @@
 # Neighbour-Help
 
-**Neighbour** è una pwa progettata per facilitare l'aiuto tra persone nelle vicinanze.
+**Neighbour** permette di trovare nelle proprie vicinanze persone disponibili a offrire piccoli aiuti pratici, che non richiedono l’intervento di un professionista,
+promuovendo così la comunità locale e supportando in particolare persone anziane o che vivono da sole.
 
 ---
 
@@ -43,3 +44,15 @@ L'applicazione segue un modello di deployment standard del settore:
 ---
 
 ## 🚀 Come avviare il progetto
+
+## 📋 Prerequisiti
+
+Assicurati di avere installato sul tuo sistema:
+* **Docker**
+* **Docker Compose**
+
+---
+Per eseguire l'intero progetto:
+
+1. **Clona il repository**:
+2. **Esegui il commando**: docker-compose -f docker-compose.yml up -d
