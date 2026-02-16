@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "69823c55bc89f512e90fc354"
+  },
+  "email": "boianoantonio@hotmail.it",
+  "password": "scrypt:32768:8:1$6a5YvfGGaV5scxRV$15ba4d887a3b7cf9fb7921195194018651bc7c0abfb1d42e689a6629dbd808f88b462689dbc6535fe78065d2fd08606213fbad9c1bc38670593977bc0e163e0d",
+  "information": {
+    "name": "Antonio",
+    "surname": "Boiano",
+    "phone_number": "+393459469560"
+  },
+  "helper_is": true
+},
+{
+  "_id": {
+    "$oid": "6991b8a9d484f00e6d69e75e"
+  },
+  "email": "espositoantonio@test.it",
+  "password": "scrypt:32768:8:1$8EQ97cwJB5gWNTrL$a481fd5a1f1f8f291c2f6caeb2513c435dd0862c9599cbfe505ea3bd4ec498b8cb671bb503f5438ebe2639f5eafe079069d145446fd55de549d8c2c920b7ac3c",
+  "information": {
+    "name": "Antonio",
+    "surname": "Esposito",
+    "phone_number": "+393459469561"
+  },
+  "helper_is": true
+},
+{
+  "_id": {
+    "$oid": "699259699f7649d7324e2c01"
+  },
+  "email": "finamario@test.it",
+  "password": "scrypt:32768:8:1$6a5YvfGGaV5scxRV$15ba4d887a3b7cf9fb7921195194018651bc7c0abfb1d42e689a6629dbd808f88b462689dbc6535fe78065d2fd08606213fbad9c1bc38670593977bc0e163e0d",
+  "information": {
+    "name": "Mario",
+    "surname": "Fina",
+    "phone_number": "+393459469562"
+  },
+  "helper_is": false
+},
+{
+  "_id": {
+    "$oid": "69933d9c0b6441de559383db"
+  },
+  "email": "ranamarco@test.it",
+  "password": "scrypt:32768:8:1$6a5YvfGGaV5scxRV$15ba4d887a3b7cf9fb7921195194018651bc7c0abfb1d42e689a6629dbd808f88b462689dbc6535fe78065d2fd08606213fbad9c1bc38670593977bc0e163e0d",
+  "information": {
+    "name": "Marco",
+    "surname": "Rana",
+    "phone_number": "+393459469563"
+  },
+  "helper_is": false
+},
+{
+  "_id": {
+    "$oid": "699352b8147e6ffc050fa504"
+  },
+  "email": "finafrancesco@test.it",
+  "password": "scrypt:32768:8:1$kN6z9OttCHbNkwMU$a47f51271661e270c25886183e95aaa18bb4c96d987c6d95fdd9b7390d1bc7fda74d2af1c8633955a1b14951f304f08c7210c2758b633e7de45f0867d1c3733d",
+  "information": {
+    "name": "Francesco",
+    "surname": "Fina",
+    "phone_number": "+393459469564"
+  },
+  "helper_is": false
+},
+{
+  "_id": {
+    "$oid": "699353cb0b6441de559383dc"
+  },
+  "email": "finamattia@test.it",
+  "password": "scrypt:32768:8:1$kN6z9OttCHbNkwMU$a47f51271661e270c25886183e95aaa18bb4c96d987c6d95fdd9b7390d1bc7fda74d2af1c8633955a1b14951f304f08c7210c2758b633e7de45f0867d1c3733d",
+  "information": {
+    "name": "Mattia",
+    "surname": "Fina",
+    "phone_number": "+393459469565"
+  },
+  "helper_is": true
+}]

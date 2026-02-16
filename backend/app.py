@@ -5,7 +5,6 @@ from auth import auth_bp
 from routes import routes_bp
 from flask_jwt_extended import JWTManager
 
-
 MONGO_DB = os.getenv("MONGO_DB")
 MONGO_HOST = os.getenv("MONGO_HOST")
 MONGO_USER = os.getenv("MONGO_USER")
@@ -15,6 +14,7 @@ JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
 jwt=JWTManager()
 
 def create_app():
+
     
     app = Flask(__name__)
 

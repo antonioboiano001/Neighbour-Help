@@ -2,9 +2,16 @@ let cont = false;
 let helper_is;
 let pos = [];
 
+if (!localStorage.getItem('access_token')) {
+
+    alert("You are not logged in !");
+    window.location.href = 'login.html';
+
+}
 
 document.getElementById('logout-button').addEventListener('click', function () {
     localStorage.removeItem('access_token');
+    alert("Logout successful !");
     window.location.href = 'login.html';
 });
 
@@ -86,7 +93,7 @@ async function updateUserData(event, name, surname, email, phone_number, descrip
 
 
     try {
-        const response = await fetch('/api/auth/update_data', {
+        const response = await fetch('/api/routes/update_data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -150,7 +157,7 @@ document.getElementById('helper-toggle').addEventListener('click', function () {
 async function getUserData() {
 
     try {
-        const response = await fetch('/api/auth/user', {
+        const response = await fetch('/api/routes/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -176,7 +183,7 @@ async function getUserData() {
 async function getHelperData() {
 
     try {
-        const response = await fetch('/api/auth/helper', {
+        const response = await fetch('/api/routes/helper', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

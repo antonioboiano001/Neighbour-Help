@@ -1,7 +1,20 @@
+if (!localStorage.getItem('access_token')) {
+
+    alert("You are not logged in !");
+    window.location.href = 'login.html';
+
+}
+
+document.getElementById('logout-button').addEventListener('click', function () {
+    localStorage.removeItem('access_token');
+    alert("Logout successful !");
+    window.location.href = 'login.html';
+});
+
 async function getUserData() {
 
     try {
-        const response = await fetch('/api/auth/user', {
+        const response = await fetch('/api/routes/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,7 +78,7 @@ async function loadReviewsUser() {
     });
 
     if (empty) {
-        document.getElementById('reviews-user').insertAdjacentHTML('beforeend', `<div class="review"><p>Non hai ancora fatto recensioni!</p></div>`);
+        document.getElementById('reviews-user').insertAdjacentHTML('beforeend', `<div class="review"><p>You haven't left any reviews yet!</p></div>`);
     }
 
 

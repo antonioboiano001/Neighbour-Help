@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "6989ab8e79c89ac363de0462"
+  },
+  "helper_id": {
+    "$oid": "69823c55bc89f512e90fc354"
+  },
+  "reviewer_id": {
+    "$oid": "6991b8a9d484f00e6d69e75e"
+  },
+  "review_text": "Antonio is very good!",
+  "rating": 5,
+  "date": "16-02-2026"
+},
+{
+  "_id": {
+    "$oid": "698bb5d119b817f5d6cc8157"
+  },
+  "helper_id": {
+    "$oid": "69823c55bc89f512e90fc354"
+  },
+  "reviewer_id": {
+    "$oid": "699259699f7649d7324e2c01"
+  },
+  "review_text": "Antonio is not very good!",
+  "rating": 1,
+  "date": "16-02-2026"
+},
+{
+  "_id": {
+    "$oid": "6993469b03295f5e42e2155d"
+  },
+  "helper_id": {
+    "$oid": "6991b8a9d484f00e6d69e75e"
+  },
+  "reviewer_id": "699259699f7649d7324e2c01",
+  "rating": 1,
+  "review_text": "Antonio Esposito is not very good",
+  "date": "16/02/2026"
+},
+{
+  "_id": {
+    "$oid": "699348211679d70809044645"
+  },
+  "helper_id": {
+    "$oid": "6991b8a9d484f00e6d69e75e"
+  },
+  "reviewer_id": "69933d9c0b6441de559383db",
+  "rating": 5,
+  "review_text": "Antonio esposito is very good!",
+  "date": "16/02/2026"
+}]

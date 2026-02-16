@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "69823c55bc89f512e90fc354"
+  },
+  "information": {
+    "name": "Antonio",
+    "surname": "Boiano",
+    "phone_number": "+393459469560"
+  },
+  "location": {
+    "lat": 40.984390212399404,
+    "lon": 14.171265016547657
+  },
+  "description": "I have skills in IT and electronics."
+},
+{
+  "_id": {
+    "$oid": "6991b8a9d484f00e6d69e75e"
+  },
+  "information": {
+    "name": "Antonio",
+    "surname": "Esposito",
+    "phone_number": "+393459469561"
+  },
+  "location": {
+    "lat": 41.25439021239941,
+    "lon": 14.194765016547658
+  },
+  "description": "I have skills in hydraulics and mechanics."
+},
+{
+  "_id": {
+    "$oid": "699353cb0b6441de559383dc"
+  },
+  "information": {
+    "name": "Mattia",
+    "surname": "Fina",
+    "phone_number": "+393459469565"
+  },
+  "location": {
+    "lat": 41.5243902123994,
+    "lon": 14.194765016547658
+  },
+  "description": "I have skills in IT and plumbing."
+}]

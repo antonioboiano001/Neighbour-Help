@@ -1,3 +1,16 @@
+if (!localStorage.getItem('access_token')) {
+
+    alert("You are not logged in !");
+    window.location.href = 'login.html';
+
+}
+
+document.getElementById('logout-button').addEventListener('click', function () {
+    localStorage.removeItem('access_token');
+    alert("Logout successful !");
+    window.location.href = 'login.html';
+});
+
 const myOffcanvasElement = document.getElementById('markerMenu');
 const bsOffcanvas = new bootstrap.Offcanvas(myOffcanvasElement);
 const bsOffcanvas2 = new bootstrap.Offcanvas(document.getElementById('insert-review'));
@@ -60,7 +73,7 @@ let helper_id;
 async function getUserData() {
 
     try {
-        const response = await fetch('/api/auth/user', {
+        const response = await fetch('/api/routes/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -140,6 +153,44 @@ async function saveReview(helper_id, reviewer_id, rating, review_text) {
 
 }
 
+let rating;
+
+    const radios = document.querySelectorAll('input[type="radio"]');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.checked) {
+
+                rating = this.value;
+            }
+        });
+    });
+
+    document.getElementById('insert-review-button').addEventListener('click', function () {
+
+        bsOffcanvas2.show();
+
+        document.getElementById("send-review-button").addEventListener('click', async function () {
+
+            const reviewText = document.getElementById("review-description").value;
+            const reviewRating = parseInt(rating);
+            const reviewer_id = await getUserData().then(user => user["_id"]);
+
+            await saveReview(helper_id, reviewer_id, reviewRating, reviewText);
+
+            radios.forEach(r => {
+                r.checked = false;
+            });
+
+            document.getElementById("review-description").value="";
+
+            bsOffcanvas2.hide();
+
+
+        });
+
+    });
+
 
 async function loadMarkers() {
 
@@ -211,43 +262,7 @@ async function loadMarkers() {
             });
     });
 
-    let rating;
-
-    const radios = document.querySelectorAll('input[type="radio"]');
-
-    radios.forEach(radio => {
-        radio.addEventListener('change', function () {
-            if (this.checked) {
-
-                rating = this.value;
-            }
-        });
-    });
-
-    document.getElementById('insert-review-button').addEventListener('click', function () {
-
-        bsOffcanvas2.show();
-
-        document.getElementById("send-review-button").addEventListener('click', async function () {
-
-            const reviewText = document.getElementById("review-description").value;
-            const reviewRating = parseInt(rating);
-            const reviewer_id = await getUserData().then(user => user["_id"]);
-
-            await saveReview(helper_id, reviewer_id, reviewRating, reviewText);
-
-            radios.forEach(r => {
-                r.checked = false;
-            });
-
-            document.getElementById("review-description").value="";
-
-            bsOffcanvas2.hide();
-
-
-        });
-
-    });
+    
 
 }
 

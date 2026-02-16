@@ -83,11 +83,6 @@ h3 {
     display: none;
 }
 
-#logout-button {
-
-    margin-left: 95%;
-
-}
 
 #review-description {
 
@@ -102,6 +97,11 @@ h3 {
 #controls {
     display: flex;
     flex-direction: column;
+}
+
+#logout-button{
+
+    cursor: pointer;
 }
 
 /* Stars Css*/

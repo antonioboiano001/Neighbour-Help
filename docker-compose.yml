@@ -10,7 +10,7 @@ services:
   backend:
     build: ./backend
     ports: #port mapping e puo avere multipli port mappings
-      - "8000:8000" #la prima e dell'host e la secondo del container che esegue questa immagine
+      - "8000:8000" #la prima è dell'host e la secondo del container che esegue questa immagine
     environment:
       MONGO_DB: ${MONGO_DB_NAME}
       MONGO_HOST: db
@@ -21,10 +21,9 @@ services:
       - db
 
   db:
-    image: mongo:8.2.4   # Usa sempre il punto, mai lo spazio o il trattino
+    image: mongo:8.2.4   
     restart: always
     environment:
-      # OPZIONALE: crea il contesto per gli script di init oltre che il nome del database ?
       MONGO_INITDB_DATABASE: ${MONGO_DB_NAME}
       #  l'utente admin del server Username e Password
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ADMIN_USER}
@@ -33,7 +32,9 @@ services:
     ports:
       - "27017:27017" #porta di default di mongo databse
     volumes:
-      - mongo_data:/data/db #crea un volume fuori dal container con delle cartelle dove salvare i dati del databse per avere persistenza
+      - ./mongo/init-db.js:/docker-entrypoint-initdb.d/init-db.js:ro
+      - ./mongo/collections:/docker-entrypoint-initdb.d/mongo/collections:ro
+      - mongo_data:/data/db #crea un volume fuori dal container con delle cartelle dove salvare i dati del database per avere persistenza
 
 volumes:
      mongo_data:
